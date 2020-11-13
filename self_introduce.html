@@ -3,43 +3,190 @@
         <title>Self Introduce</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="slide.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+        <script type="text/javascript" src="slide.js" ></script>
     </head>
-    <body>
+    <body id="body" style="background-color: #ffffff; color: #000000;">
+        <!-- right side btn -->
+        <div id="backgroud_btn_area" style="position: fixed;">
+            <div>
+                <input type="button" value="night" style="margin: 0em;"
+                onclick="
+                    document.getElementById('body').style.color = 'white'
+                    document.getElementById('body').style.background = 'dimgray'
+                " />
+                <input type="button" value="day" style="margin: 0em;"
+                onclick="
+                    document.getElementById('body').style.color='#000000';
+                    document.getElementById('body').style.background = '#ffffff'
+                " />
+            </div>
+            <div style="margin-top: 30px;">
+                <div>
+                    <a href="https://github.com/zeeeeeno">
+                        <img class=link src="git_img.png" width="50px" height="50">
+                    </a>
+                </div>
+                <div style="margin-top: 20px;">
+                    <a href="http://instagam.com/easy._.no">
+                        <img class=link src="insta.png" width="50" height="50">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- first content: self introduce -->
         <div id="contents_background_area">
+            <div style="width: 100%;">
+                <h2 style="text-align: center;">Jinstagram</h2>
+            </div>
             <div id="contents_area">
                 <div id="contents_top_area">
-                    <h3>자기소개 페이지</h3>
+                    <div style="float: left; margin-right: 10px;">
+                        <img src="gsitm_logo.PNG" alt="Avatar" class="avatar">
+                    </div>
+                    <div style="float: left;">
+                        <h4 style="margin: 3px;">자기소개</h4>
+                        <script>
+                            let today = new Date();   
+                            let year = today.getFullYear(); // 년도
+                            let month = today.getMonth() + 1;  // 월
+                            let date = today.getDate();  // 날짜
+                            document.write(year + '/' + month + '/' + date)
+                        </script>
+                    </div>
+                    <div style="float: right; font-size: 30px; margin-top: 10px;">
+                        <span onclick="
+                            var target = document.querySelector('#iconHeart1');
+                            if (target.style.color === 'yellow') {
+                                document.querySelector('#iconHeart1').style.color = 'red';
+                            } else {
+                                document.querySelector('#iconHeart1').style.color = 'yellow';
+                            }
+                        ">
+                            <i class="fa fa-heart" id="iconHeart1" aria-hidden="true">
+                            </i>
+                        </span>
+                    </div>
                 </div>
                 <div id="contents_img_area">
-                    <img src="/self_img.jpg" width="100%" height="200px"/>
+                    <img src="/self_img.jpg" width="100%" height="100%"/>
                 </div>
                 <div id="contents_text_area">
                     <ul>
-                        <li>이름: 이진호</li>
-                        <li>생년월일: 1996년 7월 15일</li>
-                        <li>주소: 충청남도 천안시 서북구</li>
-                        <li>이메일: zeeno@gsitm.com</li>
-                        <li>전화번호: 010-7643-9983</li>
+                        <li id="list_style">이름: 이진호</li>
+                        <li id="list_style">생년월일: 1996년 7월 15일</li>
+                        <li id="list_style">출신학교: 건양대학교 융합IT학과</li>
+                        <li id="list_style">주소: 충청남도 천안시 서북구</li>
+                        <li id="list_style">이메일: zeeno@gsitm.com</li>
+                        <li id="list_style">전화번호: 010-7643-9983</li>
                     </ul>
                 </div>
-                <div id="contents_icon_area">
-                    <span onclick="
-                        var target = document.querySelector('#iconHeart');
-                        if (target.style.color === 'yellow') {
-                            document.querySelector('#iconHeart').style.color = 'red';
-                        } else {
-                            document.querySelector('#iconHeart').style.color = 'yellow';
-                        }
-                    ">
-                        <i class="fa fa-heart" id="iconHeart" aria-hidden="true">
-                        </i>
-                    </span>
-                    <span onclick="
-                        console.log('click comment: ' + commentBool)
-                    ">
-                        <i class="fa fa-comment" id="icon_comment" aria-hidden="true"></i>
-                    </span>
+            </div>
+            <!-- keyword contents -->
+            <div id="contents_area">
+                <div id="contents_top_area">
+                    <div style="float: left; margin-right: 10px;">
+                        <img src="gsitm_logo.PNG" alt="Avatar" class="avatar">
+                    </div>
+                    <div style="float: left;">
+                        <h4 style="margin: 3px;">나를 표현하는 키워드</h4>
+                        <script>
+                            let todaySec = new Date();   
+                            let yearSec = todaySec.getFullYear(); // 년도
+                            let monthSec = todaySec.getMonth() + 1;  // 월
+                            let dateSec = todaySec.getDate();  // 날짜
+                            document.write(yearSec + '/' + monthSec + '/' + dateSec)
+                        </script>
+                    </div>
+                    <div style="float: right; font-size: 30px; margin-top: 10px;">
+                        <span onclick="
+                            var target = document.querySelector('#iconHeart2');
+                            if (target.style.color === 'yellow') {
+                                document.querySelector('#iconHeart2').style.color = 'red';
+                            } else {
+                                document.querySelector('#iconHeart2').style.color = 'yellow';
+                            }
+                        ">
+                            <i class="fa fa-heart" id="iconHeart2" aria-hidden="true">
+                            </i>
+                        </span>
+                    </div>
+                </div>
+                <!-- <div id="contents_img_area">
+                    <img src="/cook.jpg" width="100%" height="100%"/>
+                </div> -->
+                <div class="slideshow-container" id="contents_img_area">
+                    <div class="mySlides fade">
+                      <img src="cook.jpg" width="100%" height="100%">
+                    </div>
+                  
+                    <div class="mySlides fade">
+                      <img src="soccer.jpg" width="100%" height="100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="soccer1.jpg" width="100%" height="100%">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                  </div>
+                <div id="contents_text_area">
+                    <h3 style="margin-left: 10px;">취미</h3>
+                    <ul>
+                        <li id="list_style">요리하기</li>
+                        <li id="list_style">쇼핑하기</li>
+                    </ul>
+                    <h3 style="margin-left: 10px;">특기</h3>
+                    <ul>
+                        <li id="list_style">축구하기</li>
+                        <li id="list_style">풋살하기</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- sw 역량 part -->
+            <div id="contents_area">
+                <div id="contents_top_area">
+                    <div style="float: left; margin-right: 10px;">
+                        <img src="gsitm_logo.PNG" alt="Avatar" class="avatar">
+                    </div>
+                    <div style="float: left;">
+                        <h4 style="margin: 3px;">SW 역량</h4>
+                        <script>
+                            let todayThr = new Date();   
+                            let yearThr = todayThr.getFullYear(); // 년도
+                            let monthThr = todayThr.getMonth() + 1;  // 월
+                            let dateThr = todayThr.getDate();  // 날짜
+                            document.write(yearThr + '/' + monthThr + '/' + dateThr)
+                        </script>
+                    </div>
+                    <div style="float: right; font-size: 30px; margin-top: 10px;">
+                        <span onclick="
+                            var target = document.querySelector('#iconHeart3');
+                            if (target.style.color === 'yellow') {
+                                document.querySelector('#iconHeart3').style.color = 'red';
+                            } else {
+                                document.querySelector('#iconHeart3').style.color = 'yellow';
+                            }
+                        ">
+                            <i class="fa fa-heart" id="iconHeart3" aria-hidden="true">
+                            </i>
+                        </span>
+                    </div>
+                </div>
+                <div id="contents_img_area">
+                    <img src="/certificate.jpg" width="100%" height="100%"/>
+                </div>
+                <div id="contents_text_area">
+                    <ul>
+                        <li id="list_style">과학기술정보통신부 "혁신성장 청년인재 육성사업"</li>
+                        <li id="list_style">ICT 멘토링 "우리동네 장애인을 위한 슈퍼맨 프로젝트"</li>
+                        <li id="list_style">자기주도적 학습 커뮤니티 튜터링</li>
+                        <li id="list_style">(주)아이렉스넷 R&D 전략기획팀 인턴</li>
+                        <li id="list_style">교내 프로젝트(DB, 컴퓨터 보안, 모바일)</li>
+                    </ul>
                 </div>
             </div>
         </div>
